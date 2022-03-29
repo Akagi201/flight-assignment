@@ -14,17 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout rust code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: install clippy
-      - uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           components: clippy
           override: true
 
       - name: cargo test
-      - run: rustup component add rustfmt
+        run: rustup component add rustfmt
         uses: actions-rs/cargo@v1
         with:
           command: test
