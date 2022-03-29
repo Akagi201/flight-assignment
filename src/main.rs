@@ -7,9 +7,9 @@ use axum::{
 };
 
 mod cli;
+mod handlers;
 mod models;
 mod solution;
-mod handlers;
 use handlers::*;
 
 #[tokio::main]
@@ -24,7 +24,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // add a fallback service for handling routes to unknown paths
     let app = app.fallback(handler_404.into_service());
-    
+
     // run our app with hyper
     // `axum::Server` is a re-export of `hyper::Server`
     let addr: SocketAddr = args.addr.parse().expect("Unable to parse socket address");

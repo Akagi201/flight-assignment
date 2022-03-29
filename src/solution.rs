@@ -23,12 +23,15 @@ pub fn find_total_path(tickets: Vec<Vec<String>>) -> Vec<String> {
         }
         res.insert(0, stack.pop().unwrap());
     }
-    vec![res.first().unwrap().to_string(), res.last().unwrap().to_string()]
+    vec![
+        res.first().unwrap().to_string(),
+        res.last().unwrap().to_string(),
+    ]
 }
 
 #[test]
 fn test() {
-    use rustgym_util::{vec_vec_string,vec_string};
+    use rustgym_util::{vec_string, vec_vec_string};
     let tickets: Vec<Vec<String>> = vec_vec_string![
         ["MUC", "LHR"],
         ["JFK", "MUC"],

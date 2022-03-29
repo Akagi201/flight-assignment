@@ -8,8 +8,8 @@ pub struct Args {
 }
 
 pub fn parse() -> Args {
-  let args = Args::parse();
-  // initialize tracing
-  tracing_subscriber::fmt::init();
-  args
+    let args = Args::parse();
+    // initialize tracing
+    tracing_subscriber::fmt::init();
+    args
 }
