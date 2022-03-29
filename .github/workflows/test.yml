@@ -9,34 +9,36 @@ on:
   pull_request:
 permissions:
   contents: read
+env:
+  RUSTFLAGS: -Dwarnings
 jobs:
-  clippy_check:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout rust code
-        uses: actions/checkout@v2
-
-      - name: install clippy
-        uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-          components: clippy
+          profile: minimal
+          components: rustfmt
           override: true
-
-      - name: cargo test
-        run: rustup component add rustfmt
-        uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --all
+      - uses: actions-rs/cargo@v1
         with:
           command: test
-
-      - name: cargo fmt
-        uses: actions-rs/cargo@v1
+          args: --all
+      - uses: actions-rs/cargo@v1
         with:
           command: fmt
           args: --all -- --check
-
-      - name: cargo clippy
-        uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: -- -D warnings
+          args: --all -- --check
+      - uses: actions-rs/cargo@v1
+        with:
+          command: check
+          args: --all
