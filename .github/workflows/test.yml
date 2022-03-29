@@ -51,9 +51,9 @@ jobs:
           command: fmt
           args: --all -- --check
 
-      - name: cargo clippy --all -- --check
+      - name: cargo clippy --all
         uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: --all -- --check
+          args: --all
 
