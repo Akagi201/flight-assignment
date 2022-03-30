@@ -44,14 +44,12 @@ Step 2: Then let's search from the start point with DFS and Backtrace. When ther
 ## Checklists
 
 - [x] axum as web.
-- [x] github ci. test.
+- [x] github CI test.
 - [x] log elapsed time.
 - [x] deploy online. curl example.
 - [x] Dockerfile to deploy.
 - [x] validate input.
-- [ ] multi answers.
-- [ ] no answers.
-- [ ] full document to explain the algorithm.
+- [x] full document to explain the algorithm.
 
 ## Solution API Server Online
 

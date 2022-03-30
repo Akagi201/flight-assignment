@@ -81,4 +81,17 @@ fn test() {
     let tickets: Vec<Vec<String>> = vec_vec_string![["A", "B"], ["B", "A"]];
     let res: Vec<String> = vec_string!["A", "A"];
     assert_eq!(find_total_path(tickets), res);
+
+    let tickets: Vec<Vec<String>> = vec_vec_string![["A", "B"]];
+    let res: Vec<String> = vec_string!["A", "B"];
+    assert_eq!(find_total_path(tickets), res);
+
+    let tickets: Vec<Vec<String>> =
+        vec_vec_string![["A", "B"], ["B", "C"], ["C", "B"], ["B", "D"], ["D", "B"]];
+    let res: Vec<String> = vec_string!["A", "B"];
+    assert_eq!(find_total_path(tickets), res);
+
+    let tickets: Vec<Vec<String>> = vec_vec_string![["A", "B"], ["C", "D"]];
+    let res: Vec<String> = vec_string![];
+    assert_eq!(find_total_path(tickets), res);
 }
