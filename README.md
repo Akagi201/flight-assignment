@@ -1,6 +1,6 @@
-# volume-assignment
+# assignment
 
-![CI Status](https://github.com/Akagi201/volume-assignment/actions/workflows/test.yml/badge.svg?branch=master)
+![CI Status](https://github.com/Akagi201/flight-assignment/actions/workflows/test.yml/badge.svg?branch=master)
 
 ## Problem
 
@@ -19,8 +19,6 @@ Examples:
 ```
 
 Specifications:
-
-Create a private GitHub repo and add <https://github.com/taariq> and <https://github.com/Vizualni> as collaborators to the project.
 
 Define and document the format of the API endpoint in the README.
 
@@ -56,7 +54,7 @@ Step 2: Then let's search from the start point with DFS and Backtrace. When ther
 I have deployed the solution to my own cloud server.
 
 ```sh
-curl --location --request POST 'http://assignment.akjong.com:2333/solution' \
+curl --location --request POST 'http://localhost:2333/solution' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "flights": [
