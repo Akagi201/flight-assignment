@@ -20,7 +20,7 @@ COPY ./ /app
 RUN cargo build --release
 
 # use a plain alpine image, the alpine version needs to match the builder
-FROM alpine:3.15
+FROM alpine:3.17
 # if needed, install additional dependencies here
 RUN apk update && apk add --no-cache openssl-dev \
     llvm-libunwind \
